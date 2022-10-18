@@ -1,270 +1,222 @@
-// function mesajGoster(){
-//     console.log("Merhaba millet,  bu bizim fonksiyonlardaki ilk yazımız.Tebrikler!.");
-// }
-// mesajGoster();
-// mesajGoster();
-
-
-// Yerel Değişkenler
-// Fonksyion içinde tanımlanan değişkene sadece o fonksiyon içerisinde erişilebilir.
-    // function mesajGoster1 (){
-    //     let mesaj= "Merhabalar ikinci örnek." //Yerel değişken 
-    //     console.log(mesaj);
-    // }
-    // mesajGoster1();
-// console.log(mesaj); // Hata mesaj değişkenini fonksiyon içinde oluşturduğum için
-// dışında yazamam.
-
-// Dış Değişkenler
-// Fonksiyon kendi dışında oluşturulmuş değişkenlere erişebilir.
-    // let kullaniciAdi = "Melisa";
-    // function mesajGoster () {
-    //     let mesaj = 'hello ' + kullaniciAdi;
-    //     console.log(mesaj);
-    // }
-    // mesajGoster();
-
-// Fonksiyon dışarda bulunan değişkenlere tam kontrol sağlar hatta değiştirilebilir.
-    // let kullaniciAdi = "Melisa";
-
-    // function mesajGoster ( ){
-    //     kullaniciAdi = "Melisa Eldem";
-    //     let mesaj = "Merhaba " + kullaniciAdi;
-    //     console.log(mesaj);
-    // }
-    // mesajGoster();
-
-// Bazen aynı isimde değişkenler olabilir fakat konumları oldukça önemlidir.
-// Örneğin birisi yerel birisi dıştaki değişken ise karışıklık olmaz
-// İçerideki değişkene bir şey yaptırırken dıştaki değişken etkilenmez.
-
-    // let kullaniciAdi = "Melisa";
-    // function mesajGoster(){
-    //     let kullaniciAdi = "Melisa Eldem"; //Yerel değişken tanımladım.
-    //     let mesaj = "Merhaba " + kullaniciAdi; //Melisa Eldem.
-    //     console.log(mesaj);
-    // }
-    // // buradaki fonksiyon kendi değişkenini yaratacak ve onu kullanacak.
-    // mesajGoster(); //Merhaba melisa eldem
-    // console.log(kullaniciAdi); //melisa
-
-//------------ PARAMETRELER --------------
-
-// Parametrelere isteğe bağlı olarak veri paslanabilir. Bunlara fonksiyon argümanı da denir.
-// Örneğin;
-
-    // function mesajGoster(gonderen, metin){ //Gönderen ve metin burada argümandır.
-    //     console.log(gonderen + ':' + metin);
-
-    // }
-    // mesajGoster("Melisa ", "Akşam buluşuyor muyuz ?");
-    // mesajGoster("Gül " ,"Evet buluşuyoruz.");
-
-// Varsayılan Değer
-// Eğer fonksiyon argümanına bir değer gönderilmemişse fonksiyon içerisinde bu değişken undefined olur.
-// Bu bi hata değildir örnekteki gibi de yazabiliriz.
-// Eğer metin değeri paslanmazsa 'metin gönderilemedi' çıktısı alınır.
-    // function mesajGoster(gonderen, metin = "Metin gönderilemedi."){
-    //     console.log(gonderen + ':' + metin);
-    // }
-    // mesajGoster("Melisa");
-
-
-//------------ DEĞER DÖNDÜRME --------------
-// Fonksiyon çağırıldığı yere değer döndürebilir.
-// Örneğin;
-    // function toplama (a, b){
-    //     return a + b ;
-    // }
-    // let sonuc = toplama(1,4);
-    // console.log(sonuc);
-
-// return fonksiyon içerisinde her yerde kullanılabilir. Kod return satırına eriştiğinde fonksiyon
-// duru ve değer fonksiyonunun çağırıldığı yere geri gönderilir.
-// Alttaki örnekte birden fazla return örneğim var;
-
-    // function yasKontrolu(yas){
-    //     if(yas > 18){
-    //         return true;
-    //     }else{
-    //         return confirm('Ebeveyn izni var mı ?');
-    //     }
-    // }
-
-    // let yas = prompt("kaç yaşındasın ?",18);
-
-    // if(yasKontrolu(yas) ){
-    //     alert("izin verildi");
-    // }else{
-    //     alert("reddedildi");
-    // }
-
-// TERNARY OPERATORLER
-// const yas = 145;
-//     // const arabaKullanabilirMi = yas >=18 ? "araba kullanabilir": "araba kullanamaz.";
-//     // console.log(arabaKullanabilirMi);
-
-//     // let araba2;
-//     // if ( yas >= 18){
-//     //     araba2="bmw";
-//     // }else{
-//     //     araba2="oyuncak";
-//     // }
-//     // console.log(araba2);
-
-//     const araba = yas >= 18 ?  "Araba kullanabilir." : "Arka koltuk online.";
-//     console.log(araba);
-//     console.log(`Bu yaşta ${yas >= 18 ? "araba kullanabilir." : "Araba kullanamaz."}`);
-
-// 1- Seçtiğiniz ülkenin nüfusu 33 milyondan fazlaysa üçlü operatörü kullanın
-// konsole şöyle bir string yazdırın: 'italya'nın nüfusu ortalamanın üzerinde.'
-// Aksi takdirde 'italya'nın nüfusu ortalamanın altında' yaz.
-// Sadece nasıl olduğuna dikkat et. bu iki cümle arasında sadece bir kelime değişiyor.
-
-// 2- Sonucu kontrol ettikten sonra popülasyonu 13 ve ardından 130 yap.
-// Farklı sonuçları gör ve popülasyonu örjinaline geri ayarlayın.
-
-    // let ulke = "italya";
-    // let nufus = 33;
-    // console.log(`${ulke}'nın nüfusu ortalamanın ${nufus >= 33 ? "üzerinde" : "altında"}`);
-
-    
-// IF & ELSE YAZIM ŞEKLİ BU ŞEKİLDEDİR.
-//     const age = 61;
-//     if ( age > 18) {
-//         console.log("Kola");
-//     }else if(age > 58){
-//         console.log("Kolayı Bırakmalısın.");
-//     }else{
-//         console.log("Su iç.");
-//     }
-// Koşullu yazmayı dene
-    // const age = 18;
-    // let drink = 
-    // age >= 18 ? "kolayı severim":
-    // age >=16 ? "Sodayı severim":
-    // age >= 10 ? "Meyvesuyu severim":
-    // age >8 ? "Şekerli içecek severim":
-    // "su içerim";
-    // console.log(drink);
-
-// KENDİNDE BAK!!!!
-    // Engin ne zaman restorana gitse kullanacağı çok basit bir bahşiş
-    // hesaplayıcısı yapmak istiyor. Hesap 50 ile 300 arasındaysa %15 bahşiş verecek.
-    // Değer farklıysa bahşiş % 20'dir.
-
-    // GÖREVLER
-    // 1- Fatura değerine bağlı olarak 'bahşiş' adlı bir değişken oluştur.
-    // yapamıyosan
-    // İf/else ifadesi ile başla ve ardından onu bir üçlüye dönüştürmeyi dene.
-
-    // 2- Konsola fatura değeri bahşiş ve son değeri içeren bir dize yazdır.
-    // (fatura + bahşiş) Örnek "Fatura 275 bahşiş 41.25" ve toplam değer "316,25"
-
-    // TEST VERİSİ
-    // Veri 1: 275, 40 ve 430 fatura değerleri için test
-
-// let fatura = 275;
-// let bahsis = fatura >=50 && fatura <=300 ? fatura * 0.15 : fatura * 0.2;
-// console.log(`Faturanız ${fatura} ve bahşiş tutarı ${bahsis} toplam ödenecek değer ${fatura + bahsis}'dir.`);
+// ------------------ FONKSİYONLAR BAŞLANGIÇ ------------------
 
     // function logger(){
     //     console.log("benim adım melisa");
     // }
-    // console.log(logger());
+    //     // Calling Func. / Running Func. Invoking Function başka yerde de karşılaşacağız.
+//     // Foknsiyonu ne kadar yazarsak o kadar gelecektir.
+//     logger();
+//     logger();
+//     logger();
 
-// Verileri fonksiyonlara atabiliyoruz.
-// Açıklayıcı fonksiyon isimleri kullanmamız gerekiyor.
-// Parantez içi parametreleri oluşturduğumuz yer bu sadece bu fonskiyona özel bir parametredir.
-// Parametreler virgül ile ayrılıyor.
-    // function meyveIsleme ( elmaSayisi, portakalSayisi){
-    //     console.log(elmaSayisi,portakalSayisi);
-    //     const meyveSuyu = `${elmaSayisi} elma ve ${portakalSayisi} portakal`;
-    //     return meyveSuyu;
+// // 25-09-2022 - PAZAR
+// // Verileri fonksiyonlara atabiliyoruz.
+// // Açıklayıcı fonksiyon isimleri kullanmamız gerekiyor.
+// // Parantez içi parametreleri oluşturduğumuz yer bu sadece bu fonskiyona özel bir parametredir.
+// // Parametreler virgül ile ayrılıyor.
+
+    // function meyveIsleme (elmaSayisi,portakalSayisi){
+    //     // console.log(elmaSayisi, portakalSayisi);
+    // const meyveSuyu = `${elmaSayisi} elma ve ${portakalSayisi} portakal`;
+    // return meyveSuyu
     // }
     // const elmaSuyu = meyveIsleme(5,0);
     // console.log(elmaSuyu);
+    // console.log(meyveIsleme(5,0));
 
+    // const atom = meyveIsleme(2,4)
+    // console.log(atom);
+
+// Number' da bir fonksiyondur.
+    // const num = Number("23");
+    // console.log(num);
+
+
+// EGZERSİZ - 21 ÜLKENİ TANIMLA
 
 // 'ulke' ,'nufus','baskent' girdilerine dayanarak üç parametre alan
 // 'ülkeniTanımla' adında bir fonksiyon yaz.
 // Fonksiyon şu dizeyi döndürsün 'Finlandiya'da 6 milyon insan var ve başkant helinski'dir.
 // Bu işlevi 3 farklı ülke için dene
 
-    // function ulkeniTanimla(ulke,nufus,baskent){
-    // const dondur =(`${ulke}'da ${nufus} milyon insan var ve başkenti ${baskent}'dir.`);
-    // return dondur;
+    // function ulkeniTanimla (ülke,nüfus,başkent){
+    //     const dondur = `${ülke}, ${nüfus} milyon insan var ve ${başkent}'dir.`;
+    //     return dondur
     // }
-    // console.log(ulkeniTanimla("Türkiye",61,"Ankara"));
+    // const ulken = ulkeniTanimla("Finlandiya",6,"Helinski");
+    // console.log(ulkeniTanimla("Finlandiya",6,"Helinski"));
+    // console.log(ulkeniTanimla("Türkiye",84,"Ankara"));  
+    // console.log(ulkeniTanimla("İtalya",33,"Roma")); 
 
+// return yazmazsak console'da ne döndüreceğini bilmediği için undefinde yazacaktır. 
+// Return yazmadığımızda let meyve değişkeni sönük kalır.Oradan anlayabilirim.
+// Return fonksiyonu bitirme gibi switchte'ki break gibi.
     // function meyveSuyu(elma,portakal){
-    //     let meyve = `${elma} elma ve ${portakal} portakal sayısı`;
+    //     let meyve = `${elma} elma ve ${portakal} portakal `;
     //     return meyve;
     // }
-    // console.log(meyveSuyu(4,5)); 
+    // console.log(meyveSuyu(3,5));
 
-    // EGZERSİZ
-    // dünya nüfusu 7900 Nüfus yüzdesi hesaplama(popülasyon/7900)*100 !popülasyona yazılan değeri biz belirliyoruz.
-    // dünyanınYüzdesi1 olarak adlandırılan 'popülasyon' parametresi alan fonksiyon oluştur
-    // Girilen popülasyon değeri dünya nüfusunun yüzdesi olarak dönsün
-    // Seçtiğin 3 ülke nüfusu için 'dünyanınyüzdesi1 çağırın
-
-//     function dunyanınYuzdesi1 (populasyon,isim){
-//         const dunyaYuzdesi = `${(populasyon/7900)*100} popülasyon ve ${isim} Nüfusu bu şekildedir.`;
-//         // return [(populasyon/7900)*100,isim]
-//     }
-//    console.log( dunyanınYuzdesi1(9000,"Türkiye"));
-//    console.log( dunyanınYuzdesi1(2000,"Abd"));
-//    console.log( dunyanınYuzdesi1(2500,"İtalya"));
-
-//    const dunyanınYuzdesi2 = function (populasyon,isim){
-//     return[(populasyon/7900)*100,isim];
-//    }
-//    console.log(dunyanınYuzdesi2(100,"ABD"));
-
-
-// ARROW FUNCTION
-// Parametresiz Arrow Funciton bu şekilde yazılıyor.
-    // const hosgeldin = () => "sitemize hoş geldiniz";
-    // console.log (alert(hosgeldin()));
-// Parametreli Arrow Function bu şekilde yazılıyor.
-    // const merhaba = (isim) =>  "merhabalar sayın," + isim;
-    // console.log(merhaba("Melisa"));
-
-
-
-    // DEĞİŞKEN 1
-    // var hesapA = {
-    //     ad : 'melisa eldem',
-    //     hesapNo : '12345678',
-    //     bakiye: 2000,
-    //     ekHesap: 1000,
+// Return ile birlikte altındaki işlemleri ciddiye almayacaktır
+// a + b ' ye kadar alır.c = d + e çalışmaz.
+    // function(){
+    //     return a + b;
+    //     const c = d + e;
     // }
 
-    // DEĞİŞKEN 2
-    // var hesapB ={
-    //     ad:'gul Eldem',
-    //     hesapNo: '1234567789',
-    //     bakiye: 3000,
-    //     ekHesap:2000,
+    // function birşeyHesaplama(){
+    //     return 2;
     // }
-    
-    // function paraCek(hesap,miktar){
-    //     console.log(`Merhaba ${hesap.ad}`);
-    //     if(hesap.bakiye>= miktar){
-    //         console.log("Paranızı alabilirsiniz.");
+    // function birşeyHesaplama2(){
+    //     return "merhaba";
+    // }
+    // console.log(birşeyHesaplama2());
+
+
+    // function birşeyHesaplama3(){
+    //     if(Math.random()> 0.5){
+    //         return 2;
     //     }else{
-    //         var toplam = hesap.bakiye + hesap.ekHesap;
-    //         if(toplam >=miktar){
-    //             if(confirm('ek Hesabınızı kullanmak ister misiniz')){
-    //                 console.log("paranızı alabilirsiniz.");
-    //             }else{
-    //                 console.log(`${hesap.hesapNo} nolu hesabınızda ${miktar} bulunmamaktadır.`);
-    //             }
-    //         }else{
-    //             console.log("üzgünüz bakiye yetersiz");
-    //         }
+    //         return "merhaba";
     //     }
     // }
-    // paraCek(hesapA,3000);
-    // paraCek(hesapB,2000);
+    // console.log(birşeyHesaplama3());
+
+    // function birşeyHesaplama4(){
+    //     console.log("Bir şey yapıyor");
+    // }
+
+    // function birşeyHesaplama5(sayi){
+    //     if(sayi === 42){
+    //         return;
+    //     }
+    //     while(true){
+    //         başkabirşeyYap();
+    //     }
+    // }
+
+
+    // function başkaHesaplama(sayı){
+    //     if(sayı===42){
+    //         return;
+    //     }
+    //     if(Math.random()> 0.5){
+    //         return 2;
+    //     }else{
+    //         return 'merhaba';
+    //     }
+    // }
+
+    // let x = başkaHesaplama(2); // 2 olabilir, "merhaba"
+    // let y = başkaHesaplama(42);
+
+
+// dışarda oluşturduğumuz ley meyve değişkeni fonksiyonun içinde de aynı 
+// değişken ismine sahip. fakat bunlar birbirini etkilemiyorlar
+// fonksiyon içindeki fonksiyona özeldir. karışmazlar.
+// örnekte consola yazdırırken elma parametresine 10 değerini verdim
+// portakal parametresine ise dışarda tanımladığım meyve değişkenini verdim oda bana 5'i verdi.
+    // let meyve= 5;
+    // function meyveSuyu(elma,portakal){
+    //     // console.log(elma,portakal);
+    //     let meyve = `${elma} elma ve ${portakal} portakal `;
+    //     return meyve;
+    // }
+    // // const meyveler = meyveSuyu(10,5);
+    // console.log(meyveSuyu(10,meyve));
+    // console.log(meyve);
+  
+    // function meyve(elma,muz){
+    //     const muzSuyu = `${muz} muz suyu hazırlayın`;
+    //     const elmaSuyu =`${muz} elma suyu hazırlayın`;
+    //     return [muzSuyu,elmaSuyu]
+    // }
+    // console.log(meyve(20,5));
+    // const sonuc = meyve(20,5);
+    // console.log("muz suyu:", sonuc[0])
+
+    // TEKRARDA BURADAYIM
+    
+    // FUNCTION DECLARATION && EXPRESSION
+
+    // FUNCTION DECLARATION/ Bu bir fonksiyon bildirimi
+    // const yas1 = yasHesap1(1986);
+
+    // function yasHesap1(dogumYili){
+    //     return 2040 - dogumYili;
+    // }
+    // // console.log(yasHesap1(1986));
+
+    // // FUNCTION EXPRESSION/ İfadesi
+    // // function ismi vermedik bi const içine aldık.
+    // const yasHesap2 = function(dogumYili){
+    //     return 2040 - dogumYili;
+    // }
+    // const yas2 = yasHesap2(1986);
+    // console.log(yas1,yas2);
+
+    // const donusYok = function (){
+    //     //no return;
+    // }
+
+
+    //     console.log(donusYok()); // Mükemmel çalışır
+    //     // ------
+    //     bildirildiFunc() 
+    //     function bildirildiFunc(){
+    //         console.log("bildirildim");
+    //     }
+
+    //     ifadeFunc (); // Büyük hata  altına yazılmalı
+    //     const ifadeFunc = function (){
+    //     console.log("ifade edildim");
+    // }
+
+// EGZERSİZ
+// dünya nüfusu 7900 Nüfus yüzdesi hesaplama(popülasyon/7900)*100 !popülasyona yazılan değeri biz belirliyoruz.
+// dünyanınYüzdesi1 olarak adlandırılan 'popülasyon' parametresi alan fonksiyon oluştur
+// Girilen popülasyon değeri dünya nüfusunun yüzdesi olarak dönsün
+// Seçtiğin 3 ülke nüfusu için 'dünyanınyüzdesi1 çağırın
+
+// FUNCTION DECLARATION
+    // function dünyanınYüzdesi1(popülasyon,ülke){
+    //     return [(popülasyon/7900)*100, ülke]
+    // }
+    // console.log(dünyanınYüzdesi1(100,"Türkiye"));
+    // console.log(dünyanınYüzdesi1(90,"İtalya"));
+    // console.log(dünyanınYüzdesi1(74,"ABD"));
+
+// FUNCTION EXPRESSION
+    // const dünyanınYüzdesi2 = function(popülasyon,ülke){
+    //     return [(popülasyon/7900)*100, ülke]
+    // }
+    // console.log(dünyanınYüzdesi2(100,"ABD"));
+    // console.log(dünyanınYüzdesi2(90,"Türkiye"));
+    // console.log(dünyanınYüzdesi2(74,"İtalya"));
+
+
+
+    // const yasHesap2 = function(dogumYili){
+    //      return 2040- dogumYili;
+    // }
+
+    
+// ARROW FUNCTION BAŞLANGIÇ
+// This alamaz.
+// Fonksiyon ifadesini daha kısa yazmamıza yarıyor.Açıkça retrun dememize gerek kalmadan
+// otomatik retrun'u var.
+
+    // const yasHesap3 = (dogumYili) => 2040 - dogumYili;
+    // const yas3 = yasHesap3(1986); 
+    //     //yasHesap3(1986) ===(1986) => 2040 - 1986 === 54 === yasHesap3(1986) === yas3
+    // console.log(yas3);
+
+// Birden fazla degisken varsa return yazmak lazım
+    // const emekliligeKalanSure = (dogumYili,isim) => {
+    //     const yas = 2040 - dogumYili;
+    //     const emeklilik = 60 - yas;
+    //     // return emeklilik;
+    //     return `${isim} ${emeklilik} yıl içerisinde emekli oluyor.`;
+    // }
+    // console.log(emekliligeKalanSure(1986,"Murat"));
+    // console.log(emekliligeKalanSure(1980,"Namık"));
